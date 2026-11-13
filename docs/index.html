@@ -1,25 +1,344 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Apps</title>
-<style>
-  body { margin: 0; background: #010204; color: #c8d2e8; font: 15px/1.75 -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
-  h1 { color: #f9ca24; letter-spacing: 4px; font-size: 22px; }
-  h2 { color: #fff; margin-top: 48px; font-size: 18px; border-bottom: 1px solid #1d2438; padding-bottom: 8px; }
-  h3 { color: #fff; font-size: 15px; margin: 24px 0 4px; }
-  a { color: #48dbfb; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TKYSOFT — Software Developer &amp; Game Showcaser</title>
+<meta name="description" content="TKYSOFT は iPhone / iPad 向けのゲームとアプリをつくるインディーデベロッパーです。SUPERNOVA、Palette Bullet、BrawlerOne。">
+<meta name="theme-color" content="#f4f2ee">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TKYSOFT — Software Developer & Game Showcaser">
+<meta property="og:description" content="回路のように、アイデアをつなぐ。iPhone / iPad のゲームとアプリをつくるインディースタジオ。">
+<meta property="og:image" content="https://tkysoft777.github.io/assets/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-<main>
-<h1>Apps</h1>
-<p><a href="supernova/">SUPERNOVA</a></p>
-<p><a href="displazma/">DISPLAZMA</a></p>
-<p><a href="palettebullet/">Palette Bullet</a></p>
-<p><a href="brawlerone/">BrawlerOne</a></p>
+<body class="is-loading">
+
+<!-- ───────── Loader ───────── -->
+<div class="loader" aria-hidden="true">
+  <svg class="loader__mark" data-inline-mark viewBox="0 0 520 470"><use href="#tk-mark"/></svg>
+  <div class="loader__row mono"><span>LOADING</span><span class="loader__num">000</span></div>
+  <div class="loader__bar"><span></span></div>
+</div>
+
+<!-- Logo symbol (reused) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="tk-mark" viewBox="0 0 520 470">
+      <g class="mk-lines" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+        <g class="mk-outer" stroke="currentColor" stroke-width="24">
+          <path class="mk-p" d="M86 60H224"/>
+          <path class="mk-p" d="M160 60V293"/>
+          <path class="mk-p" d="M113 268L250 340"/>
+          <path class="mk-p" d="M250 86V340"/>
+          <path class="mk-p" d="M250 200L411 79"/>
+          <path class="mk-p" d="M298 164L382 232"/>
+          <path class="mk-p" d="M382 268L250 340"/>
+          <path class="mk-p" d="M250 340V384"/>
+        </g>
+        <g class="mk-inner" stroke="var(--paper)" stroke-width="7">
+          <path class="mk-p" d="M90 60H220"/>
+          <path class="mk-p" d="M160 64V289"/>
+          <path class="mk-p" d="M117 270L246 338"/>
+          <path class="mk-p" d="M250 90V336"/>
+          <path class="mk-p" d="M254 197L407 82"/>
+          <path class="mk-p" d="M302 167L378 229"/>
+          <path class="mk-p" d="M378 270L254 338"/>
+          <path class="mk-p" d="M250 344V380"/>
+        </g>
+      </g>
+      <g class="mk-nodes" fill="var(--paper)" stroke="currentColor" stroke-width="17">
+        <circle class="mk-n" cx="60"  cy="60"  r="26"/>
+        <circle class="mk-n" cx="250" cy="60"  r="26"/>
+        <circle class="mk-n" cx="430" cy="60"  r="26"/>
+        <circle class="mk-n" cx="95"  cy="250" r="26"/>
+        <circle class="mk-n" cx="400" cy="250" r="26"/>
+        <circle class="mk-n" cx="250" cy="410" r="26"/>
+      </g>
+    </symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></symbol>
+    <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2-2.8V9.1a6.3 6.3 0 1 0 5.4 6.3V8.6a8 8 0 0 0 4.7 1.5V6.7a4.7 4.7 0 0 1-4.7-4.7Z"/></symbol>
+  </defs>
+</svg>
+
+<div class="cursor" aria-hidden="true"><span class="cursor__ring"><b class="cursor__label"></b></span><span class="cursor__dot"></span></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<!-- ───────── Header ───────── -->
+<header class="header">
+  <a class="brand" href="#top" aria-label="TKYSOFT トップへ">
+    <svg class="brand__mark" viewBox="0 0 520 470"><use href="#tk-mark"/></svg>
+    <span class="brand__name">TKYSOFT</span>
+  </a>
+  <nav class="nav" aria-label="メインメニュー">
+    <a href="#about" data-magnet><span data-text="About">About</span></a>
+    <a href="#works" data-magnet><span data-text="Works">Works</span></a>
+    <a href="#movies" data-magnet><span data-text="Movies">Movies</span></a>
+    <a href="#craft" data-magnet><span data-text="Craft">Craft</span></a>
+    <a href="#contact" class="nav__cta" data-magnet>Contact</a>
+  </nav>
+  <button class="burger" aria-label="メニュー" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- ───────── Hero ───────── -->
+<section class="hero">
+  <canvas class="hero__circuit" aria-hidden="true"></canvas>
+  <div class="hero__center">
+    <div class="hero__logo" data-tilt>
+      <svg class="hero__mark" data-inline-mark viewBox="0 0 520 470" role="img" aria-label="TKYSOFT ロゴ"><use href="#tk-mark"/></svg>
+      <span class="hero__pulse" aria-hidden="true"></span>
+    </div>
+    <h1 class="hero__title" aria-label="TKYSOFT"><span class="split" aria-hidden="true">TKYSOFT</span></h1>
+    <p class="hero__sub"><span class="reveal-line">Software Developer</span><span class="reveal-line">&amp; Game Showcaser</span></p>
+  </div>
+  <div class="hero__meta">
+    <span class="mono">iOS / iPadOS — Games &amp; Apps</span>
+    <span class="mono">© 2026 TKYSOFT777</span>
+  </div>
+  <a class="scroll-cue" href="#about" aria-label="下へスクロール"><span>SCROLL</span><i></i></a>
+</section>
+
+<!-- ───────── Marquee ───────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>GAME DEVELOPMENT</span><b>◉</b><span>iPhone &amp; iPad</span><b>◉</b><span>UNITY</span><b>◉</b><span>SWIFT</span><b>◉</b><span>PLAYFUL ENGINEERING</span><b>◉</b><span>INDIE STUDIO</span><b>◉</b>
+    <span>GAME DEVELOPMENT</span><b>◉</b><span>iPhone &amp; iPad</span><b>◉</b><span>UNITY</span><b>◉</b><span>SWIFT</span><b>◉</b><span>PLAYFUL ENGINEERING</span><b>◉</b><span>INDIE STUDIO</span><b>◉</b>
+  </div>
+</div>
+
+<!-- ───────── About ───────── -->
+<section class="section about" id="about">
+  <div class="sec-head">
+    <span class="sec-num mono">01</span><span class="sec-line"></span><span class="sec-label mono">ABOUT</span>
+  </div>
+  <div class="about__grid">
+    <h2 class="about__lead" data-fill>回路のように、<br><em>アイデア</em>をつなぐ。</h2>
+    <div class="about__body">
+      <p data-rise>TKYSOFT は、iPhone / iPad 向けのゲームとアプリをつくるインディーデベロッパーです。</p>
+      <p data-rise>ひとつの点（ノード）から線がのび、別のアイデアとつながって、ひとつの遊びになる。ロゴに込めたのは、そんなものづくりの姿勢です。企画・デザイン・プログラム・運営まで、すべてを自分の手で回しています。</p>
+      <p class="about__en mono" data-rise>Ideas are nodes. Code is the trace that connects them.</p>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b data-count="4">0</b><span>Titles</span><small>ゲーム &amp; アプリ</small></div>
+    <div class="stat"><b data-count="10">0</b><span>Languages</span><small>多言語対応</small></div>
+    <div class="stat"><b data-count="2">0</b><span>Platforms</span><small>iPhone / iPad</small></div>
+    <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Indie</span><small>企画から運営まで</small></div>
+  </div>
+</section>
+
+<!-- ───────── Works (horizontal on desktop) ───────── -->
+<section class="works" id="works">
+  <div class="works__pin">
+    <div class="works__top">
+      <div class="sec-head">
+        <span class="sec-num mono">02</span><span class="sec-line"></span><span class="sec-label mono">WORKS</span>
+      </div>
+      <div class="works__row">
+        <h2 class="works__title"><span class="split">Games</span> <span class="amp">&amp;</span> <span class="split">Apps</span></h2>
+        <div class="works__count mono"><b class="works__cur">01</b> / 04<span class="works__bar"><i></i></span></div>
+      </div>
+    </div>
+
+    <div class="works__track">
+      <article class="work" style="--accent:#ff8a3d;--accent2:#7b3cff">
+        <div class="work__info">
+          <div class="work__head">
+            <img class="work__icon" src="assets/games/supernova-icon.jpg" alt="" width="84" height="84">
+            <div><span class="work__tag mono">PUZZLE · iPhone / iPad</span><h3 class="work__name">SUPERNOVA</h3></div>
+          </div>
+          <p class="work__catch">星を融合させる重力パズル</p>
+          <p class="work__desc">同じ星の核をぶつけて、より大きな星へ。重力の地平線からあふれる前に、銀河最大の超新星をつくりだせ。</p>
+          <ul class="work__chips mono"><li>Free</li><li>Capacitor</li><li>Physics</li></ul>
+          <div class="work__links">
+            <a class="btn" href="https://tkysoft777.github.io/supernova/" data-magnet>サポート <i>→</i></a>
+            <a class="btn btn--ghost" href="https://tkysoft777.github.io/supernova/privacy.html">プライバシー</a>
+          </div>
+        </div>
+        <div class="work__visual" data-tilt>
+          <div class="phone phone--back"><img src="assets/games/supernova-2.jpg" alt="SUPERNOVA の星の融合画面" loading="lazy"></div>
+          <div class="phone"><img src="assets/games/supernova-1.jpg" alt="SUPERNOVA のプレイ画面" loading="lazy"></div>
+          <span class="work__glow"></span>
+        </div>
+        <span class="work__index">01</span>
+      </article>
+
+      <article class="work" style="--accent:#ff4f8b;--accent2:#2fb3ff">
+        <div class="work__info">
+          <div class="work__head">
+            <img class="work__icon" src="assets/games/palettebullet-icon.jpg" alt="" width="84" height="84">
+            <div><span class="work__tag mono">ARCADE · iPhone / iPad</span><h3 class="work__name">Palette Bullet</h3></div>
+          </div>
+          <p class="work__catch">撃って描く、色彩シューティング</p>
+          <p class="work__desc">キャンバスに迫る色たちを、絵の具で撃って弾けさせよう。飛び散った色はそのまま絵になり、ステージの終わりには額縁に入った一枚の名画に。</p>
+          <ul class="work__chips mono"><li>Free</li><li>Unity 6</li><li>10 Languages</li></ul>
+          <div class="work__links">
+            <a class="btn" href="https://tkysoft777.github.io/palettebullet/" data-magnet>サポート <i>→</i></a>
+            <a class="btn btn--ghost" href="https://tkysoft777.github.io/palettebullet/privacy.html">プライバシー</a>
+          </div>
+        </div>
+        <div class="work__visual" data-tilt>
+          <div class="phone phone--back"><img src="assets/games/palettebullet-2.jpg" alt="Palette Bullet のタイトル画面" loading="lazy"></div>
+          <div class="phone"><img src="assets/games/palettebullet-1.jpg" alt="Palette Bullet のプレイ画面" loading="lazy"></div>
+          <span class="work__glow"></span>
+        </div>
+        <span class="work__index">02</span>
+      </article>
+
+      <article class="work work--wide" style="--accent:#ffcc33;--accent2:#e8352b">
+        <div class="work__info">
+          <div class="work__head">
+            <img class="work__icon" src="assets/games/brawlerone-icon.jpg" alt="" width="84" height="84">
+            <div><span class="work__tag mono">ACTION · iPhone / iPad</span><h3 class="work__name">BrawlerOne</h3></div>
+          </div>
+          <p class="work__catch">棒人間たちの大乱闘パーティー</p>
+          <p class="work__desc">ふにゃふにゃの棒人間で、なぐって、けって、ほうり投げて大乱闘！ 近くの友だちやオンラインで最大4人、ステージから落とし合おう。</p>
+          <ul class="work__chips mono"><li>Free + Full</li><li>Ragdoll</li><li>Online 4P</li><li>13 Stages</li></ul>
+          <div class="work__links">
+            <a class="btn" href="https://tkysoft777.github.io/brawlerone/" data-magnet>サポート <i>→</i></a>
+            <a class="btn btn--ghost" href="https://tkysoft777.github.io/brawlerone/privacy.html">プライバシー</a>
+          </div>
+        </div>
+        <div class="work__visual" data-tilt>
+          <div class="tablet tablet--back"><img src="assets/games/brawlerone-2.jpg" alt="BrawlerOne の海賊船ステージ" loading="lazy"></div>
+          <div class="tablet"><img src="assets/games/brawlerone-1.jpg" alt="BrawlerOne のリングステージ" loading="lazy"></div>
+          <span class="work__glow"></span>
+        </div>
+        <span class="work__index">03</span>
+      </article>
+
+      <article class="work work--soon" style="--accent:#8a5cff;--accent2:#14d2c8">
+        <div class="work__info">
+          <span class="soon-badge mono"><i></i>COMING SOON</span>
+          <div class="work__head">
+            <img class="work__icon" src="assets/games/displazma-icon.jpg" alt="" width="84" height="84">
+            <div><span class="work__tag mono">SOCIAL · iPhone / iPad</span><h3 class="work__name">DISPLAZMA</h3></div>
+          </div>
+          <p class="work__catch">ペルソナで語り、考えをつなぐ</p>
+          <p class="work__desc">ひとつのアカウントで、いくつものペルソナを。枝分かれするスレッドと、人とテーマの距離が見えるリレーションで、あなたの考えが誰かの考えとつながっていく。</p>
+          <ul class="work__chips mono"><li>SwiftUI</li><li>Node.js</li><li>In Development</li></ul>
+          <div class="work__links"><span class="btn btn--soon">近日公開予定</span></div>
+        </div>
+        <div class="work__visual" data-tilt>
+          <div class="phone phone--back"><img src="assets/games/displazma-2.jpg" alt="DISPLAZMA のスレッド画面（開発中）" loading="lazy"></div>
+          <div class="phone"><img src="assets/games/displazma-1.jpg" alt="DISPLAZMA のホーム画面（開発中）" loading="lazy"></div>
+          <span class="work__glow"></span>
+        </div>
+        <span class="work__index">04</span>
+      </article>
+
+      <div class="work-end">
+        <svg viewBox="0 0 520 470" aria-hidden="true"><use href="#tk-mark"/></svg>
+        <p class="work-end__big">Next game<br>is <em>loading…</em></p>
+        <p class="work-end__sub">次の作品を開発中です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── Movies ───────── -->
+<section class="section movies" id="movies">
+  <div class="sec-head">
+    <span class="sec-num mono">03</span><span class="sec-line"></span><span class="sec-label mono">MOVIES</span>
+  </div>
+  <div class="movies__row">
+    <h2 class="movies__title"><span class="split">Watch</span> <em class="split">it play.</em></h2>
+    <div class="movies__side">
+      <p data-rise>トレーラーやプレイ動画を YouTube・TikTok で公開していきます。</p>
+      <div class="movies__channels"></div>
+    </div>
+  </div>
+  <div class="movies__tabs" role="tablist" hidden>
+    <button role="tab" class="is-on" data-filter="all">All</button>
+    <button role="tab" data-filter="youtube">YouTube</button>
+    <button role="tab" data-filter="tiktok">TikTok</button>
+  </div>
+  <div class="swiper movies__swiper">
+    <div class="swiper-wrapper"></div>
+  </div>
+  <div class="movies__nav">
+    <button class="movies__prev" aria-label="前の動画">←</button>
+    <div class="movies__pager mono"></div>
+    <button class="movies__next" aria-label="次の動画">→</button>
+  </div>
+</section>
+
+<!-- ───────── Craft ───────── -->
+<section class="section craft" id="craft">
+  <div class="sec-head">
+    <span class="sec-num mono">04</span><span class="sec-line"></span><span class="sec-label mono">CRAFT</span>
+  </div>
+  <h2 class="craft__title" data-fill>つくり方も、<em>回路</em>のように。</h2>
+  <div class="craft__grid">
+    <div class="card">
+      <svg class="card__ico" viewBox="0 0 64 64"><circle cx="14" cy="14" r="6"/><circle cx="50" cy="50" r="6"/><path d="M20 14H34L50 30V44"/></svg>
+      <span class="mono card__k">01 — PLAN</span>
+      <h3>ひらめきを設計する</h3>
+      <p>遊びの核になる「ひとつの手ざわり」から考え、ルールとステージを組み立てます。</p>
+      <span class="card__num">01</span>
+    </div>
+    <div class="card">
+      <svg class="card__ico" viewBox="0 0 64 64"><circle cx="32" cy="12" r="6"/><circle cx="12" cy="52" r="6"/><circle cx="52" cy="52" r="6"/><path d="M32 18V34L16 48M32 34L48 48"/></svg>
+      <span class="mono card__k">02 — BUILD</span>
+      <h3>Unity / Swift で実装</h3>
+      <p>物理演算・ラグドール・通信対戦まで。iPhone と iPad の両方で気持ちよく動くよう磨きます。</p>
+      <span class="card__num">02</span>
+    </div>
+    <div class="card">
+      <svg class="card__ico" viewBox="0 0 64 64"><circle cx="32" cy="32" r="7"/><circle cx="12" cy="12" r="5"/><circle cx="52" cy="12" r="5"/><circle cx="32" cy="56" r="5"/><path d="M16 16L27 27M48 16L37 27M32 39V51"/></svg>
+      <span class="mono card__k">03 — GROW</span>
+      <h3>遊ばれながら育てる</h3>
+      <p>いただいた声をもとにアップデート。リリースしてからが本番だと考えています。</p>
+      <span class="card__num">03</span>
+    </div>
+  </div>
+  <div class="stack mono">
+    <span>Unity 6</span><span>C#</span><span>Swift</span><span>SwiftUI</span><span>Objective-C++</span><span>TypeScript</span><span>Capacitor</span><span>Game Center</span><span>StoreKit</span><span>AdMob</span>
+  </div>
+</section>
+
+<!-- ───────── Contact ───────── -->
+<section class="contact" id="contact">
+  <canvas class="contact__circuit" aria-hidden="true"></canvas>
+  <div class="contact__inner">
+    <span class="sec-label mono">05 — CONTACT</span>
+    <h2 class="contact__title"><span class="split">Let’s</span> <em class="split">connect.</em></h2>
+    <p data-rise>ゲームの感想・不具合のご報告・お仕事のご相談など、お気軽にどうぞ。</p>
+    <a class="contact__mail" href="mailto:tkysoft777@gmail.com" data-magnet data-cursor="MAIL">
+      <span>tkysoft777@gmail.com</span><i>↗</i>
+    </a>
+  </div>
+</section>
 </main>
+
+<footer class="footer">
+  <div class="footer__brand">
+    <svg viewBox="0 0 520 470"><use href="#tk-mark"/></svg>
+    <span>TKYSOFT</span>
+  </div>
+  <nav class="footer__links">
+    <a href="https://tkysoft777.github.io/supernova/">SUPERNOVA</a>
+    <a href="https://tkysoft777.github.io/palettebullet/">Palette Bullet</a>
+    <a href="https://tkysoft777.github.io/brawlerone/">BrawlerOne</a>
+  </nav>
+  <div class="footer__social"></div>
+  <small class="mono">© 2026 TKYSOFT777. All rights reserved.</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js" defer></script>
+<script src="videos.js" defer></script>
+<script src="main.js" defer></script>
 </body>
 </html>
