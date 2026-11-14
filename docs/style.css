@@ -345,3 +345,16 @@ body.is-ready .hero__pulse{animation:pulse 3.6s var(--ease) 2.4s infinite}
   .work__name{font-size:clamp(1.6rem,8.4vw,2.2rem);word-break:break-word}
   .work__index{font-size:4.4rem}
 }
+
+/* release states */
+.live-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;padding:6px 14px;border-radius:99px;background:#14b86a;color:#fff;font-weight:600;font-size:.66rem}
+.live-badge i{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.8);animation:livep 1.6s infinite}
+@keyframes livep{70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.btn--store{background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 14px 30px -12px color-mix(in srgb,var(--accent) 70%,transparent)}
+.btn--store::before{background:var(--navy)}
+.hero__news{margin-top:26px;display:inline-flex;align-items:center;gap:10px;padding:9px 18px 9px 10px;border-radius:99px;background:#fff;box-shadow:0 1px 0 var(--line),0 14px 30px -16px rgba(15,30,61,.35);color:var(--navy);font-size:.9rem;font-weight:500;transition:box-shadow .4s}
+.hero__news span{background:var(--red);color:#fff;border-radius:99px;padding:3px 10px;font-size:.62rem;font-weight:600}
+.hero__news b{font-family:var(--display);font-weight:800}
+.hero__news i{font-style:normal;color:var(--red);transition:transform .4s var(--ease)}
+.hero__news:hover{box-shadow:0 0 0 2px var(--red),0 14px 30px -16px rgba(232,53,43,.6)}
+.hero__news:hover i{transform:translate(3px,-3px)}

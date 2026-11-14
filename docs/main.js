@@ -220,11 +220,10 @@
       <div class="vslide__meta"><span class="mono">${esc(v.game || 'TKYSOFT')}</span><b>${esc(v.title || '')}</b></div>
     </div>`;
   const placeholders = [
-    { soon: true, vertical: true, thumb: 'assets/games/supernova-1.jpg', game: 'SUPERNOVA', title: 'トレーラー公開予定' },
+    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-1.jpg', game: 'Palette Bullet', title: '紹介ムービー 公開予定' },
+    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-2.jpg', game: 'Palette Bullet', title: 'フリーペイント 公開予定' },
     { soon: true, vertical: false, thumb: 'assets/games/brawlerone-1.jpg', game: 'BrawlerOne', title: '4人対戦プレイ動画 公開予定' },
-    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-1.jpg', game: 'Palette Bullet', title: 'プレイ動画 公開予定' },
-    { soon: true, vertical: false, thumb: 'assets/games/brawlerone-2.jpg', game: 'BrawlerOne', title: 'ステージ紹介 公開予定' },
-    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-2.jpg', game: 'Palette Bullet', title: 'メイキング 公開予定' },
+    { soon: true, vertical: true, thumb: 'assets/games/supernova-1.jpg', game: 'SUPERNOVA', title: 'トレーラー公開予定' },
   ];
   const listFor = f => { const l = f === 'all' ? videos : videos.filter(v => v.platform === f); return l.length ? l : placeholders; };
   const wrapper = $('.movies__swiper .swiper-wrapper');
@@ -349,6 +348,7 @@
       .from('.hero__title .ch', { yPercent: 120, rotateX: -90, opacity: 0, stagger: .06, duration: 1.2 }, '-=1.4')
       .fromTo('.reveal-line', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.1, stagger: .12, ease: 'expo.inOut' }, '-=1')
       .from('.header', { yPercent: -100, opacity: 0, duration: 1 }, '-=.9')
+      .from('.hero__news', { opacity: 0, y: 24, scale: .9, duration: 1 }, '-=.8')
       .from('.hero__meta, .scroll-cue', { opacity: 0, y: 20, duration: .8, stagger: .1 }, '-=.7');
   }
 
