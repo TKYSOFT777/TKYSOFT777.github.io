@@ -235,7 +235,14 @@
     { soon: true, vertical: true, thumb: 'assets/games/supernova-1.jpg', game: 'SUPERNOVA', title: T('ph4') },
   ];
   let curFilter = 'all';
-  const listFor = f => { const l = f === 'all' ? videos : videos.filter(v => v.platform === f); return l.length ? l : placeholders(); };
+  const listFor = f => {
+    const l = f === 'all' ? videos : videos.filter(v => v.platform === f);
+    if (!l.length) return placeholders();
+    // 「すべて」のときは、まだ動画のないゲームの「公開予定」カードを後ろに残す
+    if (f !== 'all') return l;
+    const have = new Set(l.map(v => (v.game || '').toLowerCase()));
+    return [...l, ...placeholders().filter(p => !have.has(p.game.toLowerCase()))];
+  };
   const wrapper = $('.movies__swiper .swiper-wrapper');
   wrapper.innerHTML = listFor('all').map(slideHTML).join('');
 
@@ -254,7 +261,7 @@
   if (window.Swiper) {
     swiper = new Swiper('.movies__swiper', {
       slidesPerView: 'auto', centeredSlides: true, spaceBetween: 28, grabCursor: true, speed: 900,
-      initialSlide: 1, effect: 'coverflow',
+      initialSlide: 0, effect: 'coverflow',
       coverflowEffect: { rotate: 0, stretch: 0, depth: 160, modifier: 1, scale: .9, slideShadows: false },
       keyboard: { enabled: true }, mousewheel: { forceToAxis: true },
       navigation: { prevEl: '.movies__prev', nextEl: '.movies__next' },

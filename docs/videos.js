@@ -27,6 +27,8 @@ window.TKY_MEDIA = {
     tiktok: "https://www.tiktok.com/@tkysoft"
   },
   videos: [
+    { url: "https://www.youtube.com/shorts/WGOa-f5fHUI", title: "色を撃つと絵になる！？ 紹介ムービー", game: "Palette Bullet", lang: "ja" },
+    { url: "https://www.youtube.com/shorts/1tMgNCMotas", title: "Shoot colors, make ART", game: "Palette Bullet", lang: "en" },
     // { url: "https://www.youtube.com/watch?v=XXXXXXXXXXX", title: "SUPERNOVA 公式トレーラー", game: "SUPERNOVA" },
     // { url: "https://www.youtube.com/shorts/XXXXXXXXXXX", title: "1分でわかる Palette Bullet", game: "Palette Bullet" },
     // { url: "https://www.tiktok.com/@tkysoft777/video/1234567890123456789", title: "BrawlerOne 4人対戦", game: "BrawlerOne" },
