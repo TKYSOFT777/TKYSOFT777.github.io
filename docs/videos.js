@@ -15,14 +15,16 @@
      title  … カードに出すタイトル
      game   … 関連するゲーム名（SUPERNOVA / Palette Bullet / BrawlerOne など）
      thumb  … サムネイル画像（省略可。YouTube は自動取得。TikTok は指定がなければゲーム画像）
+     lang   … 言語別の動画なら "ja" / "en" など（省略可）。その言語でサイトを見ている人にだけ出る。
+              その言語の動画がないときは "en" の動画が代わりに出る。
 
    channels にアカウントの URL を入れると、フッターと MOVIES 欄に
    YouTube / TikTok へのリンクボタンが出ます（空のままなら出ません）。
    ========================================================== */
 window.TKY_MEDIA = {
   channels: {
-    youtube: "",   // 例: "https://www.youtube.com/@TKYSOFT777"
-    tiktok: ""     // 例: "https://www.tiktok.com/@tkysoft777"
+    youtube: "https://www.youtube.com/@TKYSOFT",
+    tiktok: "https://www.tiktok.com/@tkysoft"
   },
   videos: [
     // { url: "https://www.youtube.com/watch?v=XXXXXXXXXXX", title: "SUPERNOVA 公式トレーラー", game: "SUPERNOVA" },

@@ -18,7 +18,9 @@
     el.innerHTML = [...el.textContent].map(c => c === ' ' ? '<span class="ch sp"> </span>' : `<span class="ch">${c}</span>`).join('');
   });
   // wrap characters for scroll "ink fill" (keeps <em>/<br>)
-  $$('[data-fill]').forEach(el => {
+  const T = k => (window.TKY_I18N ? window.TKY_I18N.t(k) : k);
+  const curLang = () => (window.TKY_I18N ? window.TKY_I18N.lang : 'ja');
+  const wrapFill = el => {
     const walk = n => [...n.childNodes].forEach(c => {
       if (c.nodeType === 3) {
         const f = document.createDocumentFragment();
@@ -27,7 +29,8 @@
       } else if (c.nodeType === 1 && c.tagName !== 'BR') walk(c);
     });
     walk(el);
-  });
+  };
+  $$('[data-fill]').forEach(wrapFill);
   // nav roll text
   $$('.nav a span[data-text]').forEach(s => { const t = s.dataset.text; s.innerHTML = `<i>${t}</i><i aria-hidden="true">${t}</i>`; });
   // section line fill
@@ -209,7 +212,13 @@
     }
     return null;
   };
-  const videos = (media.videos || []).map(parseVideo).filter(Boolean);
+  const allVideos = (media.videos || []).map(parseVideo).filter(Boolean);
+  // lang: "ja" などを付けた動画はその言語のときだけ出す（その言語の動画がなければ "en" のものを出す）
+  const videosFor = lang => {
+    const has = allVideos.some(v => v.lang === lang);
+    return allVideos.filter(v => !v.lang || v.lang === lang || (!has && v.lang === 'en'));
+  };
+  let videos = videosFor(curLang());
   const esc = s => String(s || '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const PLAT = { youtube: ['i-yt', 'YouTube'], tiktok: ['i-tt', 'TikTok'] };
   const slideHTML = v => `
@@ -219,13 +228,14 @@
       <span class="vslide__play"></span>
       <div class="vslide__meta"><span class="mono">${esc(v.game || 'TKYSOFT')}</span><b>${esc(v.title || '')}</b></div>
     </div>`;
-  const placeholders = [
-    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-1.jpg', game: 'Palette Bullet', title: '紹介ムービー 公開予定' },
-    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-2.jpg', game: 'Palette Bullet', title: 'フリーペイント 公開予定' },
-    { soon: true, vertical: false, thumb: 'assets/games/brawlerone-1.jpg', game: 'BrawlerOne', title: '4人対戦プレイ動画 公開予定' },
-    { soon: true, vertical: true, thumb: 'assets/games/supernova-1.jpg', game: 'SUPERNOVA', title: 'トレーラー公開予定' },
+  const placeholders = () => [
+    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-1.jpg', game: 'Palette Bullet', title: T('ph1') },
+    { soon: true, vertical: true, thumb: 'assets/games/palettebullet-2.jpg', game: 'Palette Bullet', title: T('ph2') },
+    { soon: true, vertical: false, thumb: 'assets/games/brawlerone-1.jpg', game: 'BrawlerOne', title: T('ph3') },
+    { soon: true, vertical: true, thumb: 'assets/games/supernova-1.jpg', game: 'SUPERNOVA', title: T('ph4') },
   ];
-  const listFor = f => { const l = f === 'all' ? videos : videos.filter(v => v.platform === f); return l.length ? l : placeholders; };
+  let curFilter = 'all';
+  const listFor = f => { const l = f === 'all' ? videos : videos.filter(v => v.platform === f); return l.length ? l : placeholders(); };
   const wrapper = $('.movies__swiper .swiper-wrapper');
   wrapper.innerHTML = listFor('all').map(slideHTML).join('');
 
@@ -235,7 +245,7 @@
   const ftBtn = k => `<a href="${esc(ch[k])}" target="_blank" rel="noopener" aria-label="${PLAT[k][1]}"><svg><use href="#${PLAT[k][0]}"/></svg></a>`;
   ['youtube', 'tiktok'].forEach(k => {
     if (!ch[k]) return;
-    $('.movies__channels').insertAdjacentHTML('beforeend', chanBtn(k, k === 'youtube' ? 'yt' : 'tt', k === 'youtube' ? 'YouTube チャンネル' : 'TikTok'));
+    $('.movies__channels').insertAdjacentHTML('beforeend', chanBtn(k, k === 'youtube' ? 'yt' : 'tt', k === 'youtube' ? `<span data-i18n="chanYt">${T('chanYt')}</span>` : 'TikTok'));
     $('.footer__social').insertAdjacentHTML('beforeend', ftBtn(k));
   });
 
@@ -257,20 +267,40 @@
     const idx = [...wrapper.children].indexOf(s);
     if (swiper && idx !== swiper.activeIndex) { swiper.slideTo(idx); return; }
     stopVideos();
-    s.insertAdjacentHTML('beforeend', `<iframe src="${s.dataset.embed}" title="動画プレーヤー" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`);
+    s.insertAdjacentHTML('beforeend', `<iframe src="${s.dataset.embed}" title="Video player" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`);
     s.classList.add('is-playing');
   });
-  if (videos.length) {
-    const tabs = $('.movies__tabs'); tabs.hidden = false;
-    $$('button', tabs).forEach(b => {
-      if (b.dataset.filter !== 'all' && !videos.some(v => v.platform === b.dataset.filter)) b.remove();
-      b.addEventListener('click', () => {
-        $$('button', tabs).forEach(x => x.classList.toggle('is-on', x === b));
-        stopVideos();
-        if (swiper) { swiper.removeAllSlides(); swiper.appendSlide(listFor(b.dataset.filter).map(slideHTML)); swiper.slideTo(0, 0); }
-      });
-    });
+  const tabs = $('.movies__tabs');
+  const renderSlides = () => {
+    stopVideos();
+    if (swiper) { swiper.removeAllSlides(); swiper.appendSlide(listFor(curFilter).map(slideHTML)); swiper.slideTo(0, 0); }
+    else wrapper.innerHTML = listFor(curFilter).map(slideHTML).join('');
+  };
+  const setupTabs = () => {
+    tabs.hidden = !videos.length;
+    $$('button', tabs).forEach(b => { b.hidden = b.dataset.filter !== 'all' && !videos.some(v => v.platform === b.dataset.filter); });
+    if (!videos.length || $(`[data-filter="${curFilter}"]`, tabs).hidden) curFilter = 'all';
+    $$('button', tabs).forEach(x => x.classList.toggle('is-on', x.dataset.filter === curFilter));
+  };
+  $$('button', tabs).forEach(b => b.addEventListener('click', () => { curFilter = b.dataset.filter; setupTabs(); renderSlides(); }));
+  setupTabs();
+
+  /* ───────────────── Language change ───────────────── */
+  const fillTweens = new Map();
+  function makeFill(el) {
+    return gsap.fromTo($$('.fc', el), { opacity: .1 }, { opacity: 1, stagger: .05, ease: 'none', scrollTrigger: { trigger: el, start: 'top 82%', end: 'bottom 48%', scrub: 1 } });
   }
+  document.addEventListener('tky:lang', () => {
+    $$('[data-fill]').forEach(el => {
+      wrapFill(el);
+      const old = fillTweens.get(el);
+      if (old) { if (old.scrollTrigger) old.scrollTrigger.kill(); old.kill(); }
+      if (window.gsap && window.ScrollTrigger && !reduce) fillTweens.set(el, makeFill(el));
+    });
+    videos = videosFor(curLang());
+    setupTabs(); renderSlides();
+    if (window.ScrollTrigger) requestAnimationFrame(() => ScrollTrigger.refresh());
+  });
 
   /* ───────────────── Header / menu ───────────────── */
   const header = $('.header'), burger = $('.burger');
@@ -333,7 +363,7 @@
     .to('.loader__bar span', { scaleX: 1, duration: reduce ? .01 : 1.8, ease: 'power2.inOut' }, 0);
   if (reduce) loaderTl.progress(1);
 
-  const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+  const fontsReady = Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), new Promise(r => setTimeout(r, 2500))]);
   Promise.all([fontsReady, new Promise(r => loaderTl.eventCallback('onComplete', r))]).then(intro);
 
   function intro() {
@@ -376,7 +406,7 @@
 
   /* ───────────────── Generic reveals ───────────────── */
   $$('.sec-line i').forEach(i => gsap.to(i, { scaleX: 1, ease: 'none', scrollTrigger: { trigger: i, start: 'top 90%', end: 'top 45%', scrub: 1 } }));
-  $$('[data-fill]').forEach(el => gsap.fromTo($$('.fc', el), { opacity: .1 }, { opacity: 1, stagger: .05, ease: 'none', scrollTrigger: { trigger: el, start: 'top 82%', end: 'bottom 48%', scrub: 1 } }));
+  $$('[data-fill]').forEach(el => fillTweens.set(el, makeFill(el)));
   $$('[data-rise]').forEach(el => gsap.from(el, { y: 50, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 90%' } }));
   $$('.works__title, .movies__title, .contact__title').forEach(t => gsap.from($$('.ch', t), {
     yPercent: 115, rotate: 6, duration: 1.2, stagger: .035, ease: 'expo.out', scrollTrigger: { trigger: t, start: 'top 88%' }
