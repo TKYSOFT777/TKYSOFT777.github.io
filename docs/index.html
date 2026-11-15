@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.css">
-<link rel="stylesheet" href="style.css?v=20261114e">
+<link rel="stylesheet" href="style.css?v=20261115a">
 </head>
 <body class="is-loading">
 
@@ -137,7 +137,7 @@
     </div>
   </div>
   <div class="stats">
-    <div class="stat"><b data-count="4">0</b><span>Titles</span><small data-i18n="s1">ゲーム &amp; アプリ</small></div>
+    <div class="stat"><b data-count="5">0</b><span>Titles</span><small data-i18n="s1">ゲーム &amp; アプリ</small></div>
     <div class="stat"><b data-count="10">0</b><span>Languages</span><small data-i18n="s2">多言語対応</small></div>
     <div class="stat"><b data-count="2">0</b><span>Platforms</span><small>iPhone / iPad</small></div>
     <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Indie</span><small data-i18n="s4">企画から運営まで</small></div>
@@ -153,14 +153,14 @@
       </div>
       <div class="works__row">
         <h2 class="works__title"><span class="split">Games</span> <span class="amp">&amp;</span> <span class="split">Apps</span></h2>
-        <div class="works__count mono"><b class="works__cur">01</b> / 04<span class="works__bar"><i></i></span></div>
+        <div class="works__count mono"><b class="works__cur">01</b> / <span class="works__total">05</span><span class="works__bar"><i></i></span></div>
       </div>
     </div>
 
     <div class="works__track">
-      <article class="work" style="--accent:#ff4f8b;--accent2:#2fb3ff">
+      <article class="work" data-game="palettebullet" style="--accent:#ff4f8b;--accent2:#2fb3ff">
         <div class="work__info">
-          <span class="live-badge mono"><i></i>NOW ON APP STORE</span>
+          <span class="work__badge"></span>
           <div class="work__head">
             <img class="work__icon" src="assets/games/palettebullet-icon.jpg" alt="" width="84" height="84">
             <div><span class="work__tag mono">ARCADE · iPhone / iPad</span><h3 class="work__name">Palette Bullet</h3></div>
@@ -168,10 +168,7 @@
           <p class="work__catch" data-i18n="pbCatch">撃って描く、色彩シューティング</p>
           <p class="work__desc" data-i18n="pbDesc">キャンバスに迫る色たちを、絵の具で撃って弾けさせよう。飛び散った色はそのまま絵になり、ステージの終わりには額縁に入った一枚の名画に。</p>
           <ul class="work__chips mono"><li>Free</li><li>Unity 6</li><li>10 Languages</li></ul>
-          <div class="work__links">
-            <a class="btn btn--store" data-store href="https://apps.apple.com/jp/app/palette-bullet/id6831254343" target="_blank" rel="noopener" data-magnet><span data-i18n="store">App Store で入手</span> <i>↗</i></a>
-            <a class="btn btn--ghost" href="https://tkysoft777.github.io/palettebullet/" data-i18n="support">サポート</a>
-          </div>
+          <div class="work__links"></div>
         </div>
         <div class="work__visual" data-tilt>
           <div class="phone phone--back"><img src="assets/games/palettebullet-2.jpg" alt="Palette Bullet のタイトル画面" loading="lazy"></div>
@@ -181,9 +178,9 @@
         <span class="work__index">01</span>
       </article>
 
-      <article class="work work--soon" style="--accent:#ff8a3d;--accent2:#7b3cff">
+      <article class="work" data-game="supernova" style="--accent:#ff8a3d;--accent2:#7b3cff">
         <div class="work__info">
-          <span class="soon-badge mono"><i></i>COMING SOON</span>
+          <span class="work__badge"></span>
           <div class="work__head">
             <img class="work__icon" src="assets/games/supernova-icon.jpg" alt="" width="84" height="84">
             <div><span class="work__tag mono">PUZZLE · iPhone / iPad</span><h3 class="work__name">SUPERNOVA</h3></div>
@@ -191,7 +188,7 @@
           <p class="work__catch" data-i18n="snCatch">星を融合させる重力パズル</p>
           <p class="work__desc" data-i18n="snDesc">同じ星の核をぶつけて、より大きな星へ。重力の地平線からあふれる前に、銀河最大の超新星をつくりだせ。</p>
           <ul class="work__chips mono"><li>Free</li><li>Capacitor</li><li>Physics</li></ul>
-          <div class="work__links"><span class="btn btn--soon" data-i18n="soon">近日公開予定</span></div>
+          <div class="work__links"></div>
         </div>
         <div class="work__visual" data-tilt>
           <div class="phone phone--back"><img src="assets/games/supernova-2.jpg" alt="SUPERNOVA の星の融合画面" loading="lazy"></div>
@@ -201,9 +198,9 @@
         <span class="work__index">02</span>
       </article>
 
-      <article class="work work--wide work--soon" style="--accent:#ffcc33;--accent2:#e8352b">
+      <article class="work work--wide" data-game="brawlerone" style="--accent:#ffcc33;--accent2:#e8352b">
         <div class="work__info">
-          <span class="soon-badge mono"><i></i>COMING SOON</span>
+          <span class="work__badge"></span>
           <div class="work__head">
             <img class="work__icon" src="assets/games/brawlerone-icon.jpg" alt="" width="84" height="84">
             <div><span class="work__tag mono">ACTION · iPhone / iPad</span><h3 class="work__name">BrawlerOne</h3></div>
@@ -211,7 +208,7 @@
           <p class="work__catch" data-i18n="boCatch">棒人間たちの大乱闘パーティー</p>
           <p class="work__desc" data-i18n="boDesc">ふにゃふにゃの棒人間で、なぐって、けって、ほうり投げて大乱闘！ 近くの友だちやオンラインで最大4人、ステージから落とし合おう。</p>
           <ul class="work__chips mono"><li>Free + Full</li><li>Ragdoll</li><li>Online 4P</li><li>13 Stages</li></ul>
-          <div class="work__links"><span class="btn btn--soon" data-i18n="soon">近日公開予定</span></div>
+          <div class="work__links"></div>
         </div>
         <div class="work__visual" data-tilt>
           <div class="tablet tablet--back"><img src="assets/games/brawlerone-2.jpg" alt="BrawlerOne の海賊船ステージ" loading="lazy"></div>
@@ -221,9 +218,9 @@
         <span class="work__index">03</span>
       </article>
 
-      <article class="work work--soon" style="--accent:#8a5cff;--accent2:#14d2c8">
+      <article class="work" data-game="displazma" style="--accent:#8a5cff;--accent2:#14d2c8">
         <div class="work__info">
-          <span class="soon-badge mono"><i></i>COMING SOON</span>
+          <span class="work__badge"></span>
           <div class="work__head">
             <img class="work__icon" src="assets/games/displazma-icon.jpg" alt="" width="84" height="84">
             <div><span class="work__tag mono">SOCIAL · iPhone / iPad</span><h3 class="work__name">DISPLAZMA</h3></div>
@@ -231,7 +228,7 @@
           <p class="work__catch" data-i18n="dzCatch">ペルソナで語り、考えをつなぐ</p>
           <p class="work__desc" data-i18n="dzDesc">ひとつのアカウントで、いくつものペルソナを。枝分かれするスレッドと、人とテーマの距離が見えるリレーションで、あなたの考えが誰かの考えとつながっていく。</p>
           <ul class="work__chips mono"><li>SwiftUI</li><li>Node.js</li><li>In Development</li></ul>
-          <div class="work__links"><span class="btn btn--soon" data-i18n="soon">近日公開予定</span></div>
+          <div class="work__links"></div>
         </div>
         <div class="work__visual" data-tilt>
           <div class="phone phone--back"><img src="assets/games/displazma-2.jpg" alt="DISPLAZMA のスレッド画面（開発中）" loading="lazy"></div>
@@ -239,6 +236,26 @@
           <span class="work__glow"></span>
         </div>
         <span class="work__index">04</span>
+      </article>
+
+      <article class="work" data-game="barcraft" style="--accent:#d49a45;--accent2:#a65e3e">
+        <div class="work__info">
+          <span class="work__badge"></span>
+          <div class="work__head">
+            <img class="work__icon" src="assets/games/barcraft-icon.jpg" alt="" width="84" height="84">
+            <div><span class="work__tag mono">SIMULATION · iPhone / iPad</span><h3 class="work__name">Bar Craft</h3></div>
+          </div>
+          <p class="work__catch" data-i18n="bcCatch">バーテンダーの技を学ぶ</p>
+          <p class="work__desc" data-i18n="bcDesc">本物のバーに立つように、カクテルの技を一杯ずつ。67種のレシピ、シェイク・ステア・フロート、そして提供の所作まで。</p>
+          <ul class="work__chips mono"><li>3D</li><li>67 Recipes</li><li>Shake · Stir · Float</li></ul>
+          <div class="work__links"></div>
+        </div>
+        <div class="work__visual" data-tilt>
+          <div class="phone phone--back"><img src="assets/games/barcraft-2.jpg" alt="Bar Craft のメニュー画面" loading="lazy"></div>
+          <div class="phone"><img src="assets/games/barcraft-1.jpg" alt="Bar Craft のフリーポア画面" loading="lazy"></div>
+          <span class="work__glow"></span>
+        </div>
+        <span class="work__index">05</span>
       </article>
 
       <div class="work-end">
@@ -342,8 +359,9 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.14/swiper-bundle.min.js" defer></script>
-<script src="videos.js?v=20261114e" defer></script>
-<script src="i18n.js?v=20261114e" defer></script>
-<script src="main.js?v=20261114e" defer></script>
+<script src="videos.js?v=20261115a" defer></script>
+<script src="i18n.js?v=20261115a" defer></script>
+<script src="games.js?v=20261115a" defer></script>
+<script src="main.js?v=20261115a" defer></script>
 </body>
 </html>

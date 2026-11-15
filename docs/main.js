@@ -195,6 +195,7 @@
     'supernova': ['assets/games/supernova-1.jpg', true],
     'palette bullet': ['assets/games/palettebullet-1.jpg', true],
     'brawlerone': ['assets/games/brawlerone-1.jpg', false],
+    'bar craft': ['assets/games/barcraft-1.jpg', true],
   };
   const parseVideo = v => {
     const u = v.url || '';
@@ -232,6 +233,7 @@
     { soon: true, vertical: true, thumb: 'assets/games/palettebullet-1.jpg', game: 'Palette Bullet', title: T('ph1') },
     { soon: true, vertical: true, thumb: 'assets/games/palettebullet-2.jpg', game: 'Palette Bullet', title: T('ph2') },
     { soon: true, vertical: false, thumb: 'assets/games/brawlerone-1.jpg', game: 'BrawlerOne', title: T('ph3') },
+    { soon: true, vertical: true, thumb: 'assets/games/barcraft-1.jpg', game: 'Bar Craft', title: T('ph1') },
     { soon: true, vertical: true, thumb: 'assets/games/supernova-1.jpg', game: 'SUPERNOVA', title: T('ph4') },
   ];
   let curFilter = 'all';

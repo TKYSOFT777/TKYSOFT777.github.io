@@ -382,3 +382,7 @@ html:is([lang="en"],[lang="es"],[lang="fr"],[lang="de"],[lang="pt"],[lang="it"])
 html:is([lang="en"],[lang="es"],[lang="fr"],[lang="de"],[lang="pt"],[lang="it"]) .craft__title{font-family:var(--display);font-weight:800;letter-spacing:-.01em;line-height:1.15}
 html:is([lang="en"],[lang="es"],[lang="fr"],[lang="de"],[lang="pt"],[lang="it"]) body{line-height:1.75;letter-spacing:0}
 html[lang="de"] .about__lead{hyphens:auto}
+
+.review-badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;padding:6px 14px;border-radius:99px;background:#f2a516;color:#fff;font-weight:600;font-size:.66rem}
+.review-badge i{width:7px;height:7px;border-radius:50%;border:2px solid #fff;border-top-color:transparent;animation:spin 1s linear infinite}
+.work__badge:empty{display:none}

@@ -10,12 +10,13 @@
     ['ko', '한국어', 'KO'], ['es', 'Español', 'ES'], ['fr', 'Français', 'FR'], ['de', 'Deutsch', 'DE'],
     ['pt', 'Português', 'PT'], ['it', 'Italiano', 'IT'],
   ];
-  const STORE_JP = 'https://apps.apple.com/jp/app/palette-bullet/id6831254343';
-  const STORE = 'https://apps.apple.com/app/id6831254343';
   const FONTS = { 'zh-Hans': 'Noto+Sans+SC', 'zh-Hant': 'Noto+Sans+TC', ko: 'Noto+Sans+KR' };
 
   const DICT = {
     ja: {
+      bcCatch: 'バーテンダーの技を学ぶ',
+      bcDesc: '本物のバーに立つように、カクテルの技を一杯ずつ。67種のレシピ、シェイク・ステア・フロート、そして提供の所作まで。',
+      review: '審査中・まもなく公開',
       desc: 'TKYSOFT は iPhone / iPad 向けのゲームとアプリをつくるインディーデベロッパーです。Palette Bullet 配信中。',
       news: '<b>Palette Bullet</b> 配信中',
       lead: '回路のように、<br><em>アイデア</em>をつなぐ。',
@@ -44,6 +45,9 @@
       lang: '言語',
     },
     en: {
+      bcCatch: 'Learn the bartender’s craft',
+      bcDesc: 'Step behind a realistic bar and learn the craft, one glass at a time — 67 recipes, shaking, stirring, layering and the art of the serve.',
+      review: 'In review — coming soon',
       desc: 'TKYSOFT is an indie developer making games and apps for iPhone and iPad. Palette Bullet is out now.',
       news: '<b>Palette Bullet</b> is out now',
       lead: 'Like a circuit,<br>we connect <em>ideas</em>.',
@@ -72,6 +76,9 @@
       lang: 'Language',
     },
     'zh-Hans': {
+      bcCatch: '学习调酒师的技艺',
+      bcDesc: '像站在真正的吧台后一样，一杯一杯地学习鸡尾酒技艺。67 种配方，摇和、搅拌、漂浮，直到出品的礼仪。',
+      review: '审核中 · 即将上架',
       desc: 'TKYSOFT 是一家为 iPhone / iPad 开发游戏和应用的独立开发者。Palette Bullet 现已上架。',
       news: '<b>Palette Bullet</b> 现已上架',
       lead: '像电路一样，<br>把<em>创意</em>连接起来。',
@@ -100,6 +107,9 @@
       lang: '语言',
     },
     'zh-Hant': {
+      bcCatch: '學習調酒師的技藝',
+      bcDesc: '像站在真正的吧檯後一樣，一杯一杯地學習調酒技藝。67 種酒譜，搖盪、攪拌、漂浮，直到出杯的禮儀。',
+      review: '審核中・即將上架',
       desc: 'TKYSOFT 是一家為 iPhone / iPad 開發遊戲與 App 的獨立開發者。Palette Bullet 現已上架。',
       news: '<b>Palette Bullet</b> 現已上架',
       lead: '像電路一樣，<br>把<em>創意</em>連結起來。',
@@ -128,6 +138,9 @@
       lang: '語言',
     },
     ko: {
+      bcCatch: '바텐더의 기술을 배우다',
+      bcDesc: '진짜 바에 선 것처럼, 칵테일 기술을 한 잔씩. 67가지 레시피, 셰이크·스터·플로트, 그리고 서빙의 몸가짐까지.',
+      review: '심사 중 · 곧 출시',
       desc: 'TKYSOFT는 iPhone / iPad용 게임과 앱을 만드는 인디 개발자입니다. Palette Bullet 출시.',
       news: '<b>Palette Bullet</b> 출시',
       lead: '회로처럼,<br><em>아이디어</em>를 잇다.',
@@ -156,6 +169,9 @@
       lang: '언어',
     },
     es: {
+      bcCatch: 'Aprende el oficio del bartender',
+      bcDesc: 'Ponte tras una barra realista y aprende el oficio copa a copa: 67 recetas, agitar, remover, crear capas y el arte de servir.',
+      review: 'En revisión — muy pronto',
       desc: 'TKYSOFT es un desarrollador independiente de juegos y apps para iPhone y iPad. Palette Bullet ya disponible.',
       news: '<b>Palette Bullet</b> ya disponible',
       lead: 'Como un circuito,<br>conectamos <em>ideas</em>.',
@@ -184,6 +200,9 @@
       lang: 'Idioma',
     },
     fr: {
+      bcCatch: 'Apprenez l’art du barman',
+      bcDesc: 'Passez derrière un bar réaliste et apprenez le métier, un verre à la fois : 67 recettes, shaker, mélanger, superposer et l’art du service.',
+      review: 'En cours de validation — bientôt',
       desc: 'TKYSOFT est un développeur indépendant de jeux et d’apps pour iPhone et iPad. Palette Bullet est disponible.',
       news: '<b>Palette Bullet</b> est disponible',
       lead: 'Comme un circuit,<br>nous relions les <em>idées</em>.',
@@ -212,6 +231,9 @@
       lang: 'Langue',
     },
     de: {
+      bcCatch: 'Lerne das Handwerk des Barkeepers',
+      bcDesc: 'Stell dich hinter eine realistische Bar und lerne das Handwerk Glas für Glas – 67 Rezepte, Shaken, Rühren, Schichten und die Kunst des Servierens.',
+      review: 'In Prüfung – bald verfügbar',
       desc: 'TKYSOFT ist ein Indie-Entwickler von Spielen und Apps für iPhone und iPad. Palette Bullet ist jetzt erhältlich.',
       news: '<b>Palette Bullet</b> ist jetzt erhältlich',
       lead: 'Wie ein Schaltkreis<br>verbinden wir <em>Ideen</em>.',
@@ -240,6 +262,9 @@
       lang: 'Sprache',
     },
     pt: {
+      bcCatch: 'Aprenda o ofício do bartender',
+      bcDesc: 'Fique atrás de um balcão realista e aprenda o ofício, um copo de cada vez — 67 receitas, bater, mexer, fazer camadas e a arte de servir.',
+      review: 'Em análise — em breve',
       desc: 'A TKYSOFT é uma desenvolvedora independente de jogos e apps para iPhone e iPad. Palette Bullet já disponível.',
       news: '<b>Palette Bullet</b> já disponível',
       lead: 'Como um circuito,<br>conectamos <em>ideias</em>.',
@@ -268,6 +293,9 @@
       lang: 'Idioma',
     },
     it: {
+      bcCatch: 'Impara l’arte del bartender',
+      bcDesc: 'Mettiti dietro un bancone realistico e impara il mestiere, un bicchiere alla volta: 67 ricette, shakerare, mescolare, stratificare e l’arte del servizio.',
+      review: 'In revisione — a breve',
       desc: 'TKYSOFT è uno sviluppatore indipendente di giochi e app per iPhone e iPad. Palette Bullet è disponibile.',
       news: '<b>Palette Bullet</b> è disponibile',
       lead: 'Come un circuito,<br>colleghiamo le <em>idee</em>.',
@@ -329,13 +357,21 @@
     document.documentElement.lang = cur;
     loadFont(cur);
     document.querySelectorAll('[data-i18n]').forEach(el => { el.innerHTML = t(el.dataset.i18n); });
-    document.querySelectorAll('[data-store]').forEach(a => { a.href = cur === 'ja' ? STORE_JP : STORE; });
+    refreshStore();
     const md = document.querySelector('meta[name="description"]'); if (md) md.content = t('desc');
     const L = LANGS.find(l => l[0] === cur);
     const btn = document.querySelector('.lang__cur'); if (btn) btn.textContent = L[2];
     const lb = document.querySelector('.lang__btn'); if (lb) lb.setAttribute('aria-label', `${t('lang')}: ${L[1]}`);
     document.querySelectorAll('.lang__menu [data-lang]').forEach(o => o.setAttribute('aria-selected', o.dataset.lang === cur));
     if (fire) document.dispatchEvent(new CustomEvent('tky:lang', { detail: cur }));
+  }
+
+  // App Store のリンク：日本語なら日本のストア、それ以外は各国のストア（data-store にアプリ ID、空なら Palette Bullet）
+  function refreshStore() {
+    document.querySelectorAll('[data-store]').forEach(a => {
+      const id = a.dataset.store || '6831254343';
+      a.href = (cur === 'ja' ? 'https://apps.apple.com/jp/app/id' : 'https://apps.apple.com/app/id') + id;
+    });
   }
 
   // 言語メニュー
@@ -355,7 +391,7 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
   }
 
-  window.TKY_I18N = { t, get lang() { return cur; }, apply: l => apply(l, true) };
+  window.TKY_I18N = { t, get lang() { return cur; }, apply: l => apply(l, true), refreshStore };
   buildMenu();
   apply(cur, false);
 })();
