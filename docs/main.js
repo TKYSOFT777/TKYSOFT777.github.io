@@ -356,12 +356,13 @@
 
   /* ───────────────── Logo draw helper ───────────────── */
   const drawMark = (svg, tl, at) => {
-    const outer = $$('.mk-outer .mk-p', svg), inner = $$('.mk-inner .mk-p', svg), nodes = $$('.mk-n', svg);
-    [...outer, ...inner].forEach(p => { const l = p.getTotalLength() + 1; gsap.set(p, { strokeDasharray: l, strokeDashoffset: l }); });
-    gsap.set(nodes, { scale: 0, transformOrigin: '50% 50%' });
-    tl.to(outer, { strokeDashoffset: 0, duration: .9, stagger: .07, ease: 'power3.inOut' }, at)
-      .to(inner, { strokeDashoffset: 0, duration: .8, stagger: .07, ease: 'power3.inOut' }, `<+.25`)
-      .to(nodes, { scale: 1, duration: .7, stagger: .08, ease: 'back.out(2.4)' }, `<+.15`);
+    // 輪郭を線で描いてから、塗りを流し込む
+    const lines = $$('.mk-line', svg), fill = $('.mk-fill', svg);
+    lines.forEach(p => { const l = p.getTotalLength() + 1; gsap.set(p, { strokeDasharray: l, strokeDashoffset: l, strokeWidth: 2.4 }); });
+    gsap.set(fill, { fillOpacity: 0 });
+    tl.to(lines, { strokeDashoffset: 0, duration: 1.1, stagger: .06, ease: 'power2.inOut' }, at)
+      .to(fill, { fillOpacity: 1, duration: .7, ease: 'power2.out' }, '-=.35')
+      .to(lines, { strokeWidth: 0, duration: .5, ease: 'power2.out' }, '<');
   };
 
   /* ───────────────── Loader → Hero intro ───────────────── */

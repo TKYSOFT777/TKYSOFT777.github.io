@@ -49,8 +49,8 @@ em{font-style:normal;color:var(--red)}
 .progress span{display:block;height:100%;background:var(--red);transform-origin:left;transform:scaleX(0)}
 
 /* ───── logo mark ───── */
-svg[viewBox="0 0 520 470"]{color:var(--red);overflow:visible}
-[data-inline-mark] .mk-n{transform-box:fill-box;transform-origin:center}
+.tk-mark,svg:has(> use[href="#tk-mark"]),[data-inline-mark]{color:var(--red);overflow:visible}
+
 
 /* ───── Loader ───── */
 .loader{position:fixed;inset:0;z-index:200;background:var(--paper);display:grid;place-content:center;justify-items:center;gap:22px}
