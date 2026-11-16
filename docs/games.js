@@ -10,7 +10,7 @@
    ========================================================== */
 window.TKY_GAMES = {
   palettebullet: { status: "live",   appId: "6831254343", support: "https://tkysoft777.github.io/palettebullet/" },
-  brawlerone:    { status: "review", appId: "6834494429", support: "https://tkysoft777.github.io/brawlerone/" },
+  brawlerone:    { status: "live",   appId: "6834494429", support: "https://tkysoft777.github.io/brawlerone/" },
   barcraft:      { status: "review", appId: "6834939196", support: "https://tkysoft777.github.io/barcraft/" },
   supernova:     { status: "soon",   appId: "",           support: "" },
   displazma:     { status: "soon",   appId: "",           support: "" },
