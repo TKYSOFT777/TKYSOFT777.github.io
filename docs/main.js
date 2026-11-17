@@ -336,6 +336,9 @@
     gsap.ticker.add(t => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
     lenis.stop();
+    // メニューを開いている間は背景をスクロールさせない
+    new MutationObserver(() => { body.classList.contains('nav-open') ? lenis.stop() : body.classList.contains('is-ready') && lenis.start(); })
+      .observe(body, { attributes: true, attributeFilter: ['class'] });
   }
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href^="#"]'); if (!a) return;

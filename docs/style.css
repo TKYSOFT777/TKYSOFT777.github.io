@@ -317,7 +317,7 @@ body.is-ready .hero__pulse{animation:pulse 3.6s var(--ease) 2.4s infinite}
 }
 @media (max-width:720px){
   .burger{display:block}
-  .nav{position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;gap:10px;clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .8s var(--ease-io);z-index:-1}
+  .nav{position:fixed;top:0;left:0;right:auto;bottom:auto;width:100vw;height:100vh;height:100dvh;margin:0;background:var(--paper);flex-direction:column;justify-content:center;gap:10px;clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .8s var(--ease-io);z-index:-1}
   .nav a{font-size:1.8rem;padding:10px 24px}
   .nav .nav__cta{margin:12px 0 0}
   body.nav-open .nav{clip-path:circle(150% at calc(100% - 40px) 40px)}
