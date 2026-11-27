@@ -8,12 +8,14 @@
      soon   … COMING SOON のバッジ +「近日公開予定」
    appId は App Store Connect の「Apple ID」（数字）。ストアのリンクはここから作ります。
    supportEn を書くと、日本語以外で見ている人には英語のサポートページを開きます。
+   page を書くと、その作品の紹介ページへの「詳しく見る」ボタンを出します（審査中・近日公開でも出る）。
    ========================================================== */
 window.TKY_GAMES = {
   palettebullet: { status: "live",   appId: "6831254343", support: "https://tkysoft777.github.io/palettebullet/" },
   brawlerone:    { status: "live",   appId: "6834494429", support: "https://tkysoft777.github.io/brawlerone/" },
   barcraft:      { status: "live",   appId: "6834939196", support: "https://tkysoft777.github.io/barcraft/" },
   qrultra:       { status: "live",   appId: "6836314348", support: "https://tkysoft777.github.io/qrultra/support/", supportEn: "https://tkysoft777.github.io/qrultra/en/support/" },
+  pilecount:     { status: "review", appId: "6837785069", support: "", page: "https://tkysoft777.github.io/pilecount/" },
   supernova:     { status: "soon",   appId: "",           support: "" },
   displazma:     { status: "soon",   appId: "",           support: "" },
 };
@@ -33,11 +35,13 @@ window.TKY_GAMES = {
       : '<span class="soon-badge mono"><i></i>COMING SOON</span>';
   // supportEn があれば、日本語以外では英語のサポートページへ
   const support = g => g.support ? `<a class="btn btn--ghost" href="${g.support}" data-support-ja="${g.support}" data-support-en="${g.supportEn || g.support}" data-i18n="support">${T('support')}</a>` : '';
-  const links = g => g.status === 'live'
+  // 作品の紹介ページ（あれば、どの状態でも出す）
+  const page = g => g.page ? `<a class="btn btn--ghost" href="${g.page}" data-magnet><span data-i18n="details">${T('details')}</span> <i>→</i></a>` : '';
+  const links = g => (g.status === 'live'
     ? `<a class="btn btn--store" data-store="${g.appId}" href="https://apps.apple.com/app/id${g.appId}" target="_blank" rel="noopener" data-magnet><span data-i18n="store">${T('store')}</span> <i>↗</i></a>${support(g)}`
     : g.status === 'review'
       ? `<span class="btn btn--soon" data-i18n="review">${T('review')}</span>${support(g)}`
-      : `<span class="btn btn--soon" data-i18n="soon">${T('soon')}</span>`;
+      : `<span class="btn btn--soon" data-i18n="soon">${T('soon')}</span>`) + page(g);
 
   cards.forEach(c => {
     const g = G[c.dataset.game] || { status: 'soon' };

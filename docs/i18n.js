@@ -16,6 +16,9 @@
     ja: {
       qrCatch: '広告なし・完全無料のQRリーダー',
       qrDesc: '起動した瞬間からカメラが読み取りを始め、枠に合わせる必要もありません。広告も課金もなく、データはすべて端末の中だけ。ずっと無料で使えるQRコードリーダーです。',
+      pcCatch: '山積みの段ボールを写真で数える',
+      pcDesc: '見えている箱に印を付けると、側面写真の奥行きから見えない奥の箱まで推定し、根拠つきで報告できます。倉庫・店舗の棚卸しや入荷確認に。数える処理はすべて端末の中で行います。',
+      details: '詳しく見る',
       bcCatch: 'バーテンダーの技を学ぶ',
       bcDesc: '本物のバーに立つように、カクテルの技を一杯ずつ。67種のレシピ、シェイク・ステア・フロート、そして提供の所作まで。',
       review: '審査中・まもなく公開',
@@ -49,6 +52,9 @@
     en: {
       qrCatch: 'Free QR reader · No ads',
       qrDesc: 'The camera starts reading the moment you open the app — no frame to line up. No ads, no in-app purchases, and your data never leaves your device. Free, now and later.',
+      pcCatch: 'Count stacked boxes from a photo',
+      pcDesc: 'Mark the boxes you can see, and PileCount estimates the hidden ones behind them from the depth in side photos — with the basis for every number. Built for warehouse and store stock checks. Japanese only, available in Japan.',
+      details: 'Learn more',
       bcCatch: 'Learn the bartender’s craft',
       bcDesc: 'Step behind a realistic bar and learn the craft, one glass at a time — 67 recipes, shaking, stirring, layering and the art of the serve.',
       review: 'In review — coming soon',
@@ -82,6 +88,9 @@
     'zh-Hans': {
       qrCatch: '无广告、完全免费的二维码扫描器',
       qrDesc: '打开即开始识别，无需对准取景框。没有广告、没有内购，所有数据只保存在你的设备上。永久免费的二维码扫描器。',
+      pcCatch: '用照片清点堆积的纸箱',
+      pcDesc: '标记看得见的纸箱，即可根据侧面照片的深度推算后面看不见的部分，并附上计算依据。适用于仓库和门店盘点。仅支持日语，仅在日本上架。',
+      details: '了解详情',
       bcCatch: '学习调酒师的技艺',
       bcDesc: '像站在真正的吧台后一样，一杯一杯地学习鸡尾酒技艺。67 种配方，摇和、搅拌、漂浮，直到出品的礼仪。',
       review: '审核中 · 即将上架',
@@ -115,6 +124,9 @@
     'zh-Hant': {
       qrCatch: '無廣告、完全免費的 QR 碼掃描器',
       qrDesc: '一打開就開始讀取，不必對準取景框。沒有廣告、沒有內購，所有資料只留在你的裝置上。永久免費的 QR 碼掃描器。',
+      pcCatch: '用照片清點堆疊的紙箱',
+      pcDesc: '標記看得見的紙箱，即可依側面照片的深度推算後方看不見的部分，並附上計算依據。適用於倉庫與門市盤點。僅支援日文，僅在日本上架。',
+      details: '了解詳情',
       bcCatch: '學習調酒師的技藝',
       bcDesc: '像站在真正的吧檯後一樣，一杯一杯地學習調酒技藝。67 種酒譜，搖盪、攪拌、漂浮，直到出杯的禮儀。',
       review: '審核中・即將上架',
@@ -148,6 +160,9 @@
     ko: {
       qrCatch: '광고 없는 완전 무료 QR 리더',
       qrDesc: '앱을 여는 순간 카메라가 바로 읽기 시작해 프레임에 맞출 필요도 없습니다. 광고도 결제도 없고, 모든 데이터는 기기 안에만 저장됩니다. 언제까지나 무료인 QR 코드 리더입니다.',
+      pcCatch: '쌓인 상자를 사진으로 세기',
+      pcDesc: '보이는 상자에 표시하면 측면 사진의 깊이로 뒤쪽의 보이지 않는 상자까지 추정하고, 근거와 함께 보고할 수 있습니다. 창고·매장 재고 조사용. 일본어 전용, 일본에서만 제공됩니다.',
+      details: '자세히 보기',
       bcCatch: '바텐더의 기술을 배우다',
       bcDesc: '진짜 바에 선 것처럼, 칵테일 기술을 한 잔씩. 67가지 레시피, 셰이크·스터·플로트, 그리고 서빙의 몸가짐까지.',
       review: '심사 중 · 곧 출시',
@@ -181,6 +196,9 @@
     es: {
       qrCatch: 'Lector QR gratis y sin anuncios',
       qrDesc: 'La cámara empieza a leer en cuanto abres la app, sin tener que encuadrar. Sin anuncios ni compras dentro de la app, y tus datos nunca salen de tu dispositivo. Gratis, ahora y siempre.',
+      pcCatch: 'Cuenta cajas apiladas con una foto',
+      pcDesc: 'Marca las cajas visibles y PileCount estima las ocultas a partir de la profundidad de las fotos laterales, mostrando siempre el cálculo. Para inventarios en almacenes y tiendas. Solo en japonés y disponible en Japón.',
+      details: 'Más información',
       bcCatch: 'Aprende el oficio del bartender',
       bcDesc: 'Ponte tras una barra realista y aprende el oficio copa a copa: 67 recetas, agitar, remover, crear capas y el arte de servir.',
       review: 'En revisión — muy pronto',
@@ -214,6 +232,9 @@
     fr: {
       qrCatch: 'Lecteur QR gratuit et sans pub',
       qrDesc: 'La caméra lit les codes dès l’ouverture de l’app, sans avoir à cadrer. Ni publicité ni achat intégré, et vos données restent sur votre appareil. Gratuit, aujourd’hui comme demain.',
+      pcCatch: 'Comptez les cartons empilés en photo',
+      pcDesc: 'Marquez les cartons visibles : PileCount estime ceux cachés derrière grâce à la profondeur des photos de côté, avec le détail du calcul. Pour les inventaires en entrepôt et en magasin. En japonais uniquement, disponible au Japon.',
+      details: 'En savoir plus',
       bcCatch: 'Apprenez l’art du barman',
       bcDesc: 'Passez derrière un bar réaliste et apprenez le métier, un verre à la fois : 67 recettes, shaker, mélanger, superposer et l’art du service.',
       review: 'En cours de validation — bientôt',
@@ -247,6 +268,9 @@
     de: {
       qrCatch: 'Kostenloser QR-Scanner ohne Werbung',
       qrDesc: 'Die Kamera liest sofort beim Öffnen der App – kein Ausrichten nötig. Keine Werbung, keine In-App-Käufe, und deine Daten verlassen nie dein Gerät. Kostenlos, heute und in Zukunft.',
+      pcCatch: 'Gestapelte Kartons per Foto zählen',
+      pcDesc: 'Markiere die sichtbaren Kartons – PileCount schätzt anhand der Tiefe in Seitenfotos auch die verdeckten, inklusive Rechenweg. Für Inventuren in Lager und Laden. Nur auf Japanisch, nur in Japan erhältlich.',
+      details: 'Mehr erfahren',
       bcCatch: 'Lerne das Handwerk des Barkeepers',
       bcDesc: 'Stell dich hinter eine realistische Bar und lerne das Handwerk Glas für Glas – 67 Rezepte, Shaken, Rühren, Schichten und die Kunst des Servierens.',
       review: 'In Prüfung – bald verfügbar',
@@ -280,6 +304,9 @@
     pt: {
       qrCatch: 'Leitor de QR grátis e sem anúncios',
       qrDesc: 'A câmera começa a ler assim que você abre o app, sem precisar enquadrar. Sem anúncios, sem compras no app, e seus dados nunca saem do seu dispositivo. Grátis, agora e sempre.',
+      pcCatch: 'Conte caixas empilhadas com uma foto',
+      pcDesc: 'Marque as caixas visíveis e o PileCount estima as escondidas a partir da profundidade das fotos laterais, sempre com o cálculo. Para inventários em armazéns e lojas. Somente em japonês, disponível no Japão.',
+      details: 'Saiba mais',
       bcCatch: 'Aprenda o ofício do bartender',
       bcDesc: 'Fique atrás de um balcão realista e aprenda o ofício, um copo de cada vez — 67 receitas, bater, mexer, fazer camadas e a arte de servir.',
       review: 'Em análise — em breve',
@@ -313,6 +340,9 @@
     it: {
       qrCatch: 'Lettore QR gratuito e senza pubblicità',
       qrDesc: 'La fotocamera inizia a leggere appena apri l’app, senza dover inquadrare. Niente pubblicità né acquisti in-app, e i tuoi dati restano sul dispositivo. Gratis, oggi e domani.',
+      pcCatch: 'Conta gli scatoloni impilati con una foto',
+      pcDesc: 'Segna gli scatoloni visibili e PileCount stima quelli nascosti dietro dalla profondità delle foto laterali, mostrando sempre il calcolo. Per gli inventari in magazzino e in negozio. Solo in giapponese, disponibile in Giappone.',
+      details: 'Scopri di più',
       bcCatch: 'Impara l’arte del bartender',
       bcDesc: 'Mettiti dietro un bancone realistico e impara il mestiere, un bicchiere alla volta: 67 ricette, shakerare, mescolare, stratificare e l’arte del servizio.',
       review: 'In revisione — a breve',
