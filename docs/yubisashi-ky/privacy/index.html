@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー｜ゆびさしKY</title>
+<meta name="description" content="作業前のKY（危険予知）と指差呼称を、撮る・点検する・声に出すだけで記録し、改ざんを検知できる証跡として残す iPhone 向けの業務アプリ。">
+<meta property="og:title" content="ゆびさしKY｜撮って・点検して・ヨシ！で残すKY記録">
+<meta property="og:description" content="作業前のKY（危険予知）と指差呼称を、撮る・点検する・声に出すだけで記録し、改ざんを検知できる証跡として残す iPhone 向けの業務アプリ。">
+<meta property="og:image" content="https://tkysoft777.github.io/yubisashi-ky/icon.png">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="../icon.png">
+<link rel="apple-touch-icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
+<link rel="stylesheet" href="../style.css?v=1">
+</head>
+<body>
+<div class="stripe"></div>
+<header class="top"><div class="wrap">
+<a class="brand" href="../"><img src="../icon.png" alt=""><span>ゆびさしKY</span></a>
+<nav aria-label="ページ内"><a href="../#how">使い方</a><a href="../#features">機能</a><a href="../#evidence">証跡のしくみ</a><a href="../#pricing">料金</a><a href="../support/">サポート</a></nav>
+<a class="btn primary small" href="mailto:tkysoft777@gmail.com?subject=%E3%82%86%E3%81%B3%E3%81%95%E3%81%97KY%20%E5%B0%8E%E5%85%A5%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87">導入のご相談</a>
+</div></header>
+<main class="doc"><h1>プライバシーポリシー</h1>
+<p class="sub">最終更新：2026年11月29日</p>
+<p>TKYSOFT（以下「私たち」）は、iPhone 向けアプリ「ゆびさしKY」（以下「本アプリ」）における情報の取り扱いを、以下のとおり定めます。</p>
+<div class="card"><b>要点：</b>KYの記録（写真・音声・文字起こし・点検結果・現場・作業者・位置情報）は、あなたの端末の中に保存されます。私たちのサーバーはなく、私たちが記録の中身を見ることはありません。外部に送るのは、(1) 第三者の時刻証明のための記録のハッシュ値（64桁の英数字）と、(2) 端末の中で音声認識ができない場合の音声（Apple に送られます）だけです。広告・解析ツール・トラッキングは使っていません。</div>
+
+<h2>1. 端末の中で扱う情報</h2>
+<table>
+<thead><tr><th>情報</th><th>使い道</th><th>保存場所</th></tr></thead>
+<tbody>
+<tr><td>撮影した写真（現場写真・危険箇所・基準写真）</td><td>KYの記録、報告書の作成</td><td>端末の中のみ</td></tr>
+<tr><td>写真の撮影情報（EXIF：撮影日時・機種・位置情報）</td><td>その場で撮影したことの裏付けとして、記録の写真に書き込みます（位置情報は設定でオフにできます）</td><td>端末の中のみ</td></tr>
+<tr><td>音声の録音と文字起こし</td><td>指差呼称・点検・問題の報告・メモの記録</td><td>端末の中のみ</td></tr>
+<tr><td>点検結果・危険と対策・確認した時刻</td><td>KYの記録、報告書の作成</td><td>端末の中のみ</td></tr>
+<tr><td>現場名・点検箇所・チェック項目・作業者の氏名・人数・会社名</td><td>記録と報告書への表示、アプリの設定</td><td>端末の中のみ</td></tr>
+<tr><td>位置情報（記録時・点検箇所の基準位置）</td><td>記録への記載、近い点検箇所・現場の表示</td><td>端末の中のみ</td></tr>
+</tbody>
+</table>
+
+<h2>2. アクセスする機能</h2>
+<table>
+<thead><tr><th>機能</th><th>使う場面</th></tr></thead>
+<tbody>
+<tr><td>カメラ</td><td>現場・危険箇所・基準写真の撮影（写真ライブラリからは読み込みません）</td></tr>
+<tr><td>マイク</td><td>指差呼称・点検の声、問題やメモの録音</td></tr>
+<tr><td>音声認識</td><td>「ヨシ」「問題」などの聞き取りと文字起こし</td></tr>
+<tr><td>位置情報（使用中のみ）</td><td>記録の位置、点検箇所の基準位置、近い現場の提案（設定でオフにできます）</td></tr>
+</tbody>
+</table>
+
+<h2>3. 外部への送信</h2>
+<h3>3-1. 第三者の時刻証明（タイムスタンプ）</h3>
+<p>記録を封印するとき、記録の内容から計算したハッシュ値（64桁の英数字）だけを、時刻認証局 FreeTSA（freetsa.org、ドイツ）に送り、RFC 3161 形式の時刻証明を受け取ります。写真・音声・文字・氏名・位置情報は送りません。ハッシュ値から記録の内容を復元することはできません。設定 →「写真・位置・時刻証明」でオフにできます。FreeTSA の取り扱いは同サービスのポリシーに従います。</p>
+<h3>3-2. 音声認識</h3>
+<p>音声認識は、対応する端末では端末の中で行います。端末の中で認識できない場合は、iOS の音声認識機能により音声が Apple に送られて処理されます。Apple による取り扱いは Apple のプライバシーポリシーに従います。</p>
+<h3>3-3. 共有</h3>
+<p>あなたが「PDFを送る」「証跡一式を書き出す」「設定を書き出す」などを選んだときは、あなたが選んだ送り先（メール・メッセージ・ファイルなど）へ、iOS の共有機能を通じてファイルが渡されます。</p>
+
+<h2>4. App内課金</h2>
+<p>ゆびさしKY Pro の購入・更新・解約は Apple（App Store）が処理します。支払い情報を私たちが受け取ることはありません。購入の有無は、端末の中で App Store の情報から確認します。</p>
+
+<h2>5. データの削除</h2>
+<p>改ざんを検知できる記録とするため、個々の記録はアプリの中で編集・削除できません。古い記録は、設定 →「古い記録を書き出して削除」で、ZIPに書き出したうえで古い順にまとめて削除できます。アプリを削除すると、端末の中のすべてのデータが削除され、元に戻せません。</p>
+
+<h2>6. 子どもの利用</h2>
+<p>本アプリは業務での利用を想定しており、子どもから意図的に情報を集めることはありません。</p>
+
+<h2>7. このポリシーの変更</h2>
+<p>内容を変更する場合は、このページでお知らせします。</p>
+
+<h2>8. お問い合わせ</h2>
+<p><a href="mailto:tkysoft777@gmail.com?subject=%E3%82%86%E3%81%B3%E3%81%95%E3%81%97KY">tkysoft777@gmail.com</a></p>
+</main>
+<footer class="site"><div class="wrap">
+<nav><a href="../">ゆびさしKY</a><a href="../support/">サポート</a><a href="../privacy/">プライバシーポリシー</a><a href="../terms/">利用規約</a><a href="mailto:tkysoft777@gmail.com?subject=%E3%82%86%E3%81%B3%E3%81%95%E3%81%97KY">お問い合わせ</a></nav>
+<span class="copy">提供：<a href="https://tkysoft777.github.io/">TKYSOFT</a>　© 2026 TKYSOFT</span>
+</div></footer>
+</body>
+</html>
